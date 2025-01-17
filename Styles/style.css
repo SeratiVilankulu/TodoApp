@@ -1,190 +1,361 @@
-  /* Google font styles  */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  
-  html, body{
-    margin: 0;
-    padding: 0;
-  }
+/* Google font styles  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-  *{
-    font-family: "Inter", serif;
-  }
-
-  body .todo-wrapper{
-    background-color: #eef5f5a8;
-    height: 100vh;
-  }
-
-  /* Navigation */
-
-  .navigation-container{
-    background-color: white;
-    padding: 30px 10px 30px 30px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.055);
-  }
-
-  .nav-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-content .logo > p{
-    margin-bottom: 0;
-  }
-
-  .nav-content .profile{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-right: 20px;
-  }
-
-  .profile > p{
-    margin-bottom: 0;
-  }
-
-  .profile .profile-icon{
-    font-size: 20px;
-  }
-
-  /* Welcome */
-  .welcome-message{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-  }
-
-  .welcome-message .welcome-heading{
-    margin: 20px 0px 10px 0px;
-    color: #407e72;
-    font-weight: 600;
-  }
-
-  .welcome-message .message{
-    text-align: center;
-    color: #bbc7c7;
-  }
-
-  /* Tasks area */
-
-  .todo-container{
-    display: flex;
-  }
-
-  .todo-container .task-list, .todo-container .add-tasks{
-    margin: 30px;
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-  }
-
-  .task-list .heading{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 10px;
-    margin-bottom: 20px;
-  }
-
-  .task-list .heading .title{
-    margin: 0px;
-  }
-
-  .task-list .heading .bi-list-task{
-    padding-top: 5px;
-    font-size: 30px;
-  }
-
-  .tasks-todo .task{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #EEF5F5;
-  }
-
-  .tasks-todo .task > p{
-    margin: 0px;
-  }
-
-  .task .bi-circle{
-    color: #407e72;
-    font-size: 20px;
-  } 
-
-  .add-tasks .heading{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    margin-left: 10px;
-  }
-
-  .heading > h2{
-    margin-bottom: 0px;
-  }
-
-  .heading > p{
-    color: #bbc7c7;
-    margin-top: 0px;
-  }
-
-  .add-tasks .task-details{
-    display: flex;
-  }
-
-  .add-tasks .name-description{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin-left: 10px;
-    padding: 20px 0px;
-  }
-
-  .name-description .task-name, .name-description .task-description{
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  .task-name input, .task-description textarea, .task-date input{
-    border: none;
-    border-bottom: 1.5px solid rgba(160, 159, 159, 0.389);
-    padding: 8px;
-    width: 500px;
-    border-radius: 4px;
-    margin-top: 5px;
-    margin-right: 10px;
-    gap: 20px;
-    transition: border-color 0.3s ease;
-  }
-
-.task-name input:focus, .task-description textarea:focus, .task-date input:focus{
-  outline: none;
-	border-bottom: 1.5px solid #2E554E;
+html,
+body {
+	margin: 0;
+	padding: 0;
 }
 
-.task-date{
-  margin-left: 10px;
-    padding: 20px 0px;
+* {
+	font-family: "Inter", serif;
 }
 
-.add-btn{}
+body .todo-wrapper {
+	background-color: rgba(228, 236, 236, 0.659);
+	height: 100%;
+}
 
-.add-btn .add-task-btn{
-	width: 115px;
+@media (max-width: 992px) {
+	body .todo-wrapper {
+		height: 100%;
+		transition: 0.2s;
+	}
+}
+
+
+/* Navigation */
+
+.navigation-container {
+	background-color: white;
+	padding: 25px 10px 25px 30px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.055);
+}
+
+@media (max-width: 992px) {
+	.navigation-container {
+		padding: 15px 10px 15px 30px;
+		transition: 0.2s;
+	}
+}
+
+.nav-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-content .logo > p {
+	margin-bottom: 0;
+	font-weight: 600;
+	font-size: 1.08rem;
+}
+
+.nav-content .profile {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-right: 20px;
+}
+
+.profile > p {
+	margin-bottom: 0;
+	font-weight: 500;
+	font-size: 1.02rem;
+}
+
+.profile-icon .user {
+	width: 35px;
+	height: 35px;
+}
+
+/* Welcome */
+.welcome-message {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+}
+
+.welcome-message .welcome-heading {
+	margin: 20px 0px 10px 0px;
+	color: #407e72;
+	font-weight: 600;
+	font-size: 3.5rem;
+}
+
+.welcome-message .message {
+	text-align: center;
+	color: #a6b1b1;
+	font-size: 1.2rem;
+	margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+	.welcome-message {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: 35vh;
+		transition: 0.2s;
+	}
+
+	.welcome-message .welcome-heading {
+		font-size: 2.5rem;
+		transition: 0.2s;
+	}
+	.welcome-message .message {
+		font-size: 0.95rem;
+		transition: 0.2s;
+		margin-bottom: 0;
+		width: 62%;
+	}
+}
+
+/* Tasks area */
+
+.todo-container {
+	display: flex;
+}
+
+@media (max-width: 852px) {
+	.todo-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.task-list {
+		width: 100%;
+		max-width: 92%;
+		transition: 0.2s;
+	}
+
+	.add-tasks {
+		margin-top: 0;
+		width: 92%;
+		transition: 0.2s;
+	}
+}
+
+.todo-container .task-list,
+.todo-container .add-tasks {
+	margin: 30px;
+	padding: 25px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.task-list .heading {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.task-list .heading .title {
+	margin: 0px;
+}
+
+@media (max-width: 892px) {
+	.task-list .heading .title {
+		font-size: 1.23rem;
+		font-weight: 600;
+		transition: 0.2s;
+	}
+}
+
+.tasks-todo .task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #eef5f5;
+}
+
+@media (max-width: 892px) {
+	.tasks-todo .task {
+		padding: 12px;
+		transition: 0.2s;
+	}
+}
+
+.tasks-todo .task > span {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0px;
+}
+
+@media (max-width: 892px) {
+	.tasks-todo .task > span {
+		gap: 5px;
+	}
+}
+
+.tasks-todo .task .single-task {
+	font-size: 1.042rem;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+@media (max-width: 892px) {
+	.tasks-todo .task .single-task {
+		font-size: 0.95rem;
+		font-weight: 400;
+		transition: 0.2s;
+	}
+}
+
+.task .bi-circle,
+.task .bi-three-dots-vertical {
+	color: #407e72;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+@media (max-width: 892px) {
+	.task .bi-circle,
+	.task .bi-three-dots-vertical {
+		font-size: 14px;
+	}
+}
+
+.add-tasks .heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+
+.heading > h2 {
+	margin-bottom: 0px;
+}
+
+.heading > p {
+	color: #a6b1b1;
+	margin-top: 0px;
+}
+
+@media (max-width: 892px) {
+	.heading > h2 {
+		font-size: 1.23rem;
+		font-weight: 600;
+		transition: 0.2s;
+	}
+
+	.heading > p {
+		font-size: 0.93rem;
+		transition: 0.2s;
+	}
+}
+
+.add-tasks .task-details {
+	display: flex;
+	position: relative;
+	top: 10px;
+}
+
+.task-details label {
+	font-size: 1.08rem;
+	font-weight: 600;
+	color: #000;
+}
+
+@media (max-width: 892px) {
+	.task-details label {
+		font-size: 14px;
+	}
+}
+
+.add-tasks .name-description {
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	padding: 20px 0px;
+}
+
+.name-description .task-name,
+.name-description .task-description,
+.date .task-date {
+	display: flex;
+	flex-direction: column;
+}
+
+.task-name input,
+.task-description textarea,
+.task-date input {
+	border: none;
+	border-bottom: 1.5px solid rgba(160, 159, 159, 0.389);
+	padding: 10px 0px;
+	border-radius: 4px;
+	margin-top: 5px;
+	margin-right: 10px;
+	gap: 20px;
+	transition: border-color 0.3s ease;
+}
+
+.task-description textarea {
+	height: 53px;
+}
+
+.task-date input[type="date"] {
+	width: 100%;
+	max-width: 500px;
+}
+
+@media (min-width: 768px) and (max-width: 823px) {
+	.task-name input,
+	.task-description textarea,
+	.task-date input {
+		width: 80%;
+		transition: 0.2s;
+	}
+}
+
+@media (min-width: 824px) and (max-width: 992px) {
+	.task-name input,
+	.task-description textarea,
+	.task-date input {
+		width: 70%;
+		transition: 0.2s;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+	.task-name input,
+	.task-description textarea,
+	.task-date input {
+		width: 60%;
+		transition: 0.2s;
+	}
+}
+
+.task-name input:focus,
+.task-description textarea:focus,
+.task-date input:focus {
+	outline: none;
+	border-bottom: 1.5px solid #2e554e;
+}
+
+.date {
+	padding: 20px 0px;
+}
+
+.add-btn .add-task-btn {
+	width: 138px;
 	height: 45px;
 	border-radius: 15px;
 	border: none;
 	color: white;
-	font-size: 15px;
-	background: #407E72;
-	margin: 20px;
+	font-weight: 500;
+	font-size: 16px;
+	background: #407e72;
+	margin: 20px 0px;
 	box-shadow: 0px 2px 8px #aaa8a8;
 	transition: background-color 0.3s ease;
 }
