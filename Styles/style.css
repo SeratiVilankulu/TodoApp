@@ -13,12 +13,12 @@ body {
 
 body .todo-wrapper {
 	background-color: rgba(228, 236, 236, 0.659);
-	height: 100%;
+	height: 100vh;
 }
 
 @media (max-width: 992px) {
 	body .todo-wrapper {
-		height: 100%;
+		height: 100vh;
 		transition: 0.2s;
 	}
 }
@@ -169,6 +169,7 @@ body .todo-wrapper {
 .tasks-todo {
 	list-style: none;
 	padding: 0;
+	overflow-y: none;
 }
 
 .tasks-todo .task {
@@ -181,6 +182,11 @@ body .todo-wrapper {
 	background-color: #eef5f5;
 }
 
+.done {
+	color: #555555;
+	text-decoration: line-through;
+}
+
 @media (max-width: 892px) {
 	.tasks-todo .task {
 		padding: 12px;
@@ -188,11 +194,18 @@ body .todo-wrapper {
 	}
 }
 
-.tasks-todo .task > span {
+.tasks-todo .task > span > div {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin: 0px;
+}
+
+.tasks-todo .task > span > #task-description {
+	color: #555555;
+	font-size: 0.9rem;
+	padding-left: 32px;
+	margin: 0;
 }
 
 @media (max-width: 892px) {
@@ -205,6 +218,7 @@ body .todo-wrapper {
 	font-size: 1.042rem;
 	font-weight: 600;
 	margin-bottom: 0;
+	cursor: pointer;
 }
 
 @media (max-width: 892px) {
@@ -216,15 +230,27 @@ body .todo-wrapper {
 }
 
 .task .bi-circle,
-.task .bi-three-dots-vertical {
+.bi-check-circle-fill {
 	color: #407e72;
 	font-size: 20px;
 	cursor: pointer;
 }
 
-@media (max-width: 892px) {
+.task .bi-trash3 {
+	color: red;
+	font-size: 18px;
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.task .bi-trash3:hover {
+	color: #8b0101;
+	font-size: 19px;
+}
+
+@media (min-width: 392px) and (max-width: 892px) {
 	.task .bi-circle,
-	.task .bi-three-dots-vertical {
+	.task .bi-trash3 {
 		font-size: 14px;
 	}
 }
@@ -262,6 +288,7 @@ body .todo-wrapper {
 	display: flex;
 	position: relative;
 	top: 10px;
+	gap: 12px;
 }
 
 .task-details label {
@@ -284,15 +311,13 @@ body .todo-wrapper {
 }
 
 .name-description .task-name,
-.name-description .task-description,
-.date .task-date {
+.task-description {
 	display: flex;
 	flex-direction: column;
 }
 
 .task-name input,
-.task-description textarea,
-.task-date input {
+.task-description textarea {
 	border: none;
 	border-bottom: 1.5px solid rgba(160, 159, 159, 0.389);
 	padding: 10px 0px;
@@ -304,18 +329,12 @@ body .todo-wrapper {
 }
 
 .task-description textarea {
-	height: 53px;
-}
-
-.task-date input[type="date"] {
-	width: 100%;
-	max-width: 500px;
+	height: 45px;
 }
 
 @media (min-width: 768px) and (max-width: 823px) {
 	.task-name input,
-	.task-description textarea,
-	.task-date input {
+	.task-description textarea {
 		width: 80%;
 		transition: 0.2s;
 	}
@@ -323,8 +342,7 @@ body .todo-wrapper {
 
 @media (min-width: 824px) and (max-width: 992px) {
 	.task-name input,
-	.task-description textarea,
-	.task-date input {
+	.task-description textarea {
 		width: 70%;
 		transition: 0.2s;
 	}
@@ -332,21 +350,19 @@ body .todo-wrapper {
 
 @media (min-width: 993px) and (max-width: 1200px) {
 	.task-name input,
-	.task-description textarea,
-	.task-date input {
+	.task-description textarea {
 		width: 60%;
 		transition: 0.2s;
 	}
 }
 
 .task-name input:focus,
-.task-description textarea:focus,
-.task-date input:focus {
+.task-description textarea:focus {
 	outline: none;
 	border-bottom: 1.5px solid #2e554e;
 }
 
-.date {
+.task-description {
 	padding: 20px 0px;
 }
 
@@ -366,13 +382,14 @@ body .todo-wrapper {
 
 /*Error message*/
 .errorMessage {
-	color: white;
+	display: none;
 	font-size: 0.8rem;
 	margin-top: 5px;
 	margin-bottom: 0;
 }
 
 .active {
+	display: flex;
 	margin-top: 5px;
 	color: red;
 	font-size: 0.8rem;
