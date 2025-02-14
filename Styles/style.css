@@ -23,7 +23,6 @@ body .todo-wrapper {
 	}
 }
 
-
 /* Navigation */
 
 .navigation-container {
@@ -167,6 +166,11 @@ body .todo-wrapper {
 	}
 }
 
+.tasks-todo {
+	list-style: none;
+	padding: 0;
+}
+
 .tasks-todo .task {
 	display: flex;
 	justify-content: space-between;
@@ -275,7 +279,7 @@ body .todo-wrapper {
 .add-tasks .name-description {
 	display: flex;
 	flex-direction: column;
-	gap: 80px;
+	gap: 50px;
 	padding: 20px 0px;
 }
 
@@ -358,4 +362,19 @@ body .todo-wrapper {
 	margin: 20px 0px;
 	box-shadow: 0px 2px 8px #aaa8a8;
 	transition: background-color 0.3s ease;
+}
+
+/*Error message*/
+.errorMessage {
+	color: white;
+	font-size: 0.8rem;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.active {
+	margin-top: 5px;
+	color: red;
+	font-size: 0.8rem;
+	margin-bottom: 0;
 }

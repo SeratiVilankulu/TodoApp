@@ -55,8 +55,11 @@
 					<div class="task-details">
 						<div class="name-description col-6">
 							<div class="task-name">
-								<label for="taskName">Task:</label>
-								<input id="taskName" type="text" placeholder="Enter task" />
+								<label for="newTask">Task:</label>
+								<input id="newTask" type="text" placeholder="Enter task" />
+								<p class="errorMessage">
+									Task cannot be empty. Please add a task.
+								</p>
 							</div>
 
 							<div class="task-description">
@@ -71,66 +74,32 @@
 
 						<div class="date col-6">
 							<div class="task-date">
-								<label for="taskDate">Task:</label>
+								<label for="taskDate">Date:</label>
 								<input id="taskDate" type="date" class="col-md-5" />
 							</div>
 						</div>
 					</div>
 
 					<div class="add-btn">
-						<button class="add-task-btn">Add Task</button>
+						<button class="add-task-btn" id="add">Add Task</button>
 					</div>
 				</div>
 				<div class="task-list col-4">
 					<div class="heading">
 						<h2 class="title">Your Tasks</h2>
 					</div>
-					<div class="tasks-todo">
-						<div class="task">
+					<ul class="tasks-todo">
+						<li class="task">
 							<span>
 								<i class="bi bi-circle"></i>
 								<p class="single-task">Task 1</p>
 							</span>
 							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-						<div class="task">
-							<span>
-								<i class="bi bi-circle"></i>
-								<p class="single-task">Task 2</p>
-							</span>
-							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-						<div class="task">
-							<span>
-								<i class="bi bi-circle"></i>
-								<p class="single-task">Task 3</p>
-							</span>
-							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-						<div class="task">
-							<span>
-								<i class="bi bi-circle"></i>
-								<p class="single-task">Task 4</p>
-							</span>
-							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-						<div class="task">
-							<span>
-								<i class="bi bi-circle"></i>
-								<p class="single-task">Task 5</p>
-							</span>
-							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-						<div class="task">
-							<span>
-								<i class="bi bi-circle"></i>
-								<p class="single-task">Task 6</p>
-							</span>
-							<i class="bi bi-three-dots-vertical"></i>
-						</div>
-					</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
+		<script src="index.js"></script>
 	</body>
 </html>
